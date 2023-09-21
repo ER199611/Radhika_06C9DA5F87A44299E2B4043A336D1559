@@ -1,0 +1,29 @@
+class Student:
+
+  def __init__(self, name, roll_number, cgpa):
+    self.name = name
+    self.roll_number = roll_number
+    self.cgpa = cgpa
+
+
+def sort_Students(Student_list):
+    # Sort the list of students in descending order of CGPA
+    sorted_Student = sorted(Student_list, 
+    key=lambda Student: Student.cgpa, reverse=True)
+    # Syntax - lambda arg:exp
+    return sorted_Student
+
+
+#Example usage:
+Students = [
+  Student("Nalifa", "A123", 7.8),
+  Student("Roopa", "A124", 8.9),
+  Student("Monika", "A125", 9.1),
+  Student("Reema", "A126", 9.9),
+]
+
+Sorted_Student = sort_Students(Students)
+
+# Print the sorted list of students
+for Student in Sorted_Student:
+  print("Name: {}, Roll Number: {}, CGPA: {}".format(Student.name, Student.roll_number, Student.cgpa))
